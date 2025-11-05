@@ -7,7 +7,7 @@ import os
 
 load_dotenv("pass.env")
 
-db_url = f"postgresql://{os.getenv('hoster')}:{os.getenv('password')}@localhost:5432/projects"
+db_url = os.getenv("db_url")
 engine = create_engine(db_url)
 session = sessionmaker(autoflush=False,bind=engine)
 Base = declarative_base()
